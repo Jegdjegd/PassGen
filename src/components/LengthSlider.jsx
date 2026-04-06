@@ -9,8 +9,9 @@ const textPrin = 'text-[#7eb8d4]/50 text-xs tracking-widest"'
 const colorNumberLength = 'text-[#7eb8d4] text-3xl font-mono font-bold drop-shadow-[0_0_8px_rgba(126,184,212,0.9)]'
 
 
-function LengthSlider() {
-  const [length, setLength] = useState(DEFAULT)
+function LengthSlider({ length, onLengthChange }) {
+
+
 
   return (
     <div className={divMaster}>
@@ -30,7 +31,7 @@ function LengthSlider() {
         min={MIN}
         max={MAX}
         value={length}
-        onChange={(e) => setLength(Number(e.target.value))}
+        onChange={(e) => onLengthChange(Number(e.target.value))}
         className="w-full accent-[#7eb8d4] cursor-pointer"
       />
 
