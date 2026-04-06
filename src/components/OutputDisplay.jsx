@@ -9,12 +9,31 @@ function OutputDisplay({password, onRegenerate}) {
   
   const [copied, setCopied] = useState(false)
 
-  const handleCopy =() => {
-    if (!password) return
-      navigator.clipboard.writeText(password)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    }
+  const handleCopy = () => {
+  if (!password) return
+  
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(password)
+      .then(() => {
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      })
+      .catch(() => fallbackCopy())
+  } else {
+    fallbackCopy()
+  }
+}
+
+const fallbackCopy = () => {
+  const el = document.createElement('textarea')
+  el.value = password
+  document.body.appendChild(el)
+  el.select()
+  document.execCommand('copy')
+  document.body.removeChild(el)
+  setCopied(true)
+  setTimeout(() => setCopied(false), 2000)
+}
 
   return (
     <div className="w-full max-w-2xl">
