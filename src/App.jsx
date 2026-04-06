@@ -20,7 +20,7 @@ function App() {
     <div className="flex min-h-screen bg-[#0d0d0d] text-white">
       <Sidebar />
       <main className="flex flex-col items-center flex-1 px-6 py-10 gap-6">
-        <OutputDisplay password={password} />
+        <OutputDisplay password={password} onRegenerate={handleGenerate} />
         <ModeSelector mode={mode} onModeChange={setMode} />
         <LengthSlider length={length} onLengthChange={setLength} />
         <GenerateButton onGenerate={handleGenerate} />

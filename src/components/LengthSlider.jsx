@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 const MIN = 8
 const MAX = 64
-const DEFAULT = MIN
 const divMaster = 'w-full max-w-2xl bg-[#111111] border border-white/10 rounded-xl px-6 py-5'
 const subText = 'text-[#7eb8d4]/30 text-xs tracking-widest'
 const textPrin = 'text-[#7eb8d4]/50 text-xs tracking-widest"'

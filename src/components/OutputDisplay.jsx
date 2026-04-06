@@ -1,13 +1,20 @@
-import { Copy, RefreshCw } from 'lucide-react'
+import { useState } from 'react'
+import { Copy, RefreshCw, Check } from 'lucide-react'
 
 const ACCENT = '#7eb8d4'
 
 const btnClass = "flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 text-[#7eb8d4]/70 text-xs tracking-widest hover:bg-white/20 cursor-pointer"
 
-function OutputDisplay({password}) {
+function OutputDisplay({password, onRegenerate}) {
+  
+  const [copied, setCopied] = useState(false)
+
   const handleCopy =() => {
-    if (password) navigator.clipboard.writeText(password)
-  }
+    if (!password) return
+      navigator.clipboard.writeText(password)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
 
   return (
     <div className="w-full max-w-2xl">
@@ -24,10 +31,24 @@ function OutputDisplay({password}) {
 
         <div className="flex gap-3">
 
-          <button className={btnClass} onClick={handleCopy}>
-            <Copy size={14} /> COPY</button>
+          <button 
+            className={`${btnClass} ${!password ? 'opacity-30 cursor-not-allowed' : ''}`} 
+            onClick={handleCopy}
+            disabled={!password}
+            >
 
-          <button className={btnClass}><RefreshCw size={14} /> REGEN</button>
+            {copied ? <Check size={14} /> : <Copy size={14} />}
+
+            {copied ? 'COPIED!' : 'COPY'}
+            </button>
+
+          <button 
+            className={`${btnClass} ${!password ? 'opacity-30 cursor-not-allowed' : ''}`}            
+            onClick={onRegenerate}
+            disabled={!password}
+            >
+              <RefreshCw size={14} /> REGEN
+          </button>
 
         </div>
 
