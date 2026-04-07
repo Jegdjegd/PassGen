@@ -73,3 +73,88 @@ Este proyecto está planteado con una evolución clara hacia un producto más co
 ## 👨‍💻 Author
 
 Desarrollado por **Jegdjegd**
+
+# 🔐 PassGen — Secure Password Generator
+
+> A modern web application for generating secure passwords, with a focus on UX, performance, and scalability.
+
+🌐 **Live Demo:** https://passgenjg.vercel.app/
+📦 **Repository:** https://github.com/Jegdjegd/PassGen
+
+---
+
+## 🧩 Project Overview
+
+**PassGen** is a frontend application developed to quickly and easily generate secure passwords.
+
+The main objective is to offer a lightweight, intuitive, and efficient tool that allows any user to improve their digital security seamlessly.
+
+This project reflects best practices in modern frontend development, including clean architecture, responsive design, and an optimized user experience.
+
+---
+
+## 🚀 Key Features
+
+- Password generation with multiple configurations:
+
+- Alphanumeric
+
+- Numeric + special characters
+
+- Full combination (high entropy)
+
+- Configurable length:
+
+- Range of 8 to 64 characters
+
+- Instant regeneration
+
+- Copy to clipboard with a single click
+
+- Responsive interface (adapted for desktop and mobile)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** — Component-based UI
+
+- **Vite** — Rapid and optimized development environment
+
+- **Tailwind CSS** — Modern and efficient design
+
+---
+
+## 🧠 Technical Highlights
+
+- Completely client-side password generation, without external dependencies
+
+- Modular logic for easy future scalability
+
+- Optimized UI for fast interaction and minimal friction
+
+- Responsive design implemented from the start (mobile-first mindset)
+
+---
+
+## 🔮 Roadmap
+
+This project is designed with a clear evolution towards a more complete product:
+
+- User authentication system
+- Password vault (secure storage)
+- Generation history
+- Native Android application
+- Future exploration of generation based on quantum computing principles
+
+---
+
+## 🎯 What This Project Demonstrates
+- Modern frontend development with current tools
+- Ability to build clean and functional interfaces
+- Focus on user experience (UX)
+- Scalability and product evolution thinking
+
+## 👨‍💻 Author
+
+Developed by **Jegdjegd**
